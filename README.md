@@ -38,6 +38,8 @@
 
 ### 9. Reusing Implementations Through Inheritance
 
+* Unlike methods, fields are never overridden. A field of an object is always associated with the reference type of the varaible referring to the object.
+
 ### 10. Programming Abstractly Through Interfaces
 
 ### 11. Handling Exceptions
