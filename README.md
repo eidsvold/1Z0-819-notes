@@ -43,8 +43,23 @@
 ### 7. Creating and Using Methods
 
 ```Java
-public String java = "Hey";
+public class Test {
+static String text1 = printAndEcho("a");
+
+static {
+pringAndEcho("b");
+}
+
+static String text2 = printAndEcho("c");
+
+static String printAndEcho(String text) {
+System.out.println(text);
+return text;
+}
+
+public static void main(String[] args) { }
 ```
+* What is the output of the code above? All members of the given class are static, hence they are initialized and executed when the class is laoded. The emptiness of the _main_ method doesn't affect that process. The expressions initializing the two static fields as well as the static initialization block are executed in the order they are defined. As a result, the string **_abc_** is printed when the _Test_ class is loaded.
 
 ### 8. Applying Encapsulation
 
