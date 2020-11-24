@@ -36,6 +36,8 @@
 
 ### 5. Working with Java Arrays
 
+* 
+
 ### 6. Describing and Using Objects and Classes
 
 ### 7. Creating and Using Methods
@@ -46,10 +48,15 @@
 
 * Unlike methods, fields are never overridden. A field of an object is always associated with the reference type of the varaible referring to the object.
 * _Polymorphism_: Subclasses can define their own unique behaviors and yet share some of the same functionality of the parent class.
+* If a superclass have at least one constructor declared, the compiler will back off and not automatically generate a no-argument constructor. If a constructor is declared in the superclass, and there is no no-arguments constructor declared, any subclass that inherits the superclass **must** make an explicit call to its superclass' constructor.
 
 ### 10. Programming Abstractly Through Interfaces
 
 * When a field is declared in an interface, it's by default _public_, _static_ and _final_. Not initializing a declared field in an interface will lead to a **compile-time error**.
+* Not all classes that implement an interface must override its methods: classes marked as _abstract_ does **not** need to override for the code to compile.
+* An implementation class can define a field with the same name as a field in the interface it's implementing: doing so just **hides** the field in the interface.
+* Overloading methods doesn't need to have a less restrictive access modifier; overriding methods does.
+* An interface field is a constant, meaning it cannot be changed in an implementation class (ref. _final_ by default).
 
 ### 11. Handling Exceptions
 
