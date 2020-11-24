@@ -47,5 +47,6 @@
 ### 12. Understanding Modules
 
 * In addition to explicit dependencies, all modules depend on the base module (java.base).
+* The _exports_ directive specify packages - it has **nothing** to do with the module graph.
 
 ## Java SE 11 Programmer II 1Z0-816
