@@ -22,11 +22,17 @@
 
 ### 1. Creating a Simple Java Program
 
+* The _-d_ option of the _javac_ command sets the destination directory for class files. If a class is part of a package, then _javac_ puts the class file in a subdirectory that reflects the package name and creates directories as needed.
+
 ### 2. Understanding Java Technology and Environment
 
 ### 3. Working With Primitive Data Types and String APIs
 
+* A _String_ object is immutable - in cannot be changed after being created. The _concat_ method appends the string argument to the end of the current string and returns the concatenation - hence the varible must be reassigned or assigned to another variable.
+
 ### 4. Using Operators and Decision Constructs
+
+* A _**switch** statement_ can only work with the following primitive data types: _byte_, _short_, _char_, and _int_. It also works with _enumerated types_, the _String_ class, and a few special classes that wrap certain primitive types: _Character_, _Byte_, _Short_ and _Integer_.
 
 ### 5. Working with Java Arrays
 
@@ -39,6 +45,7 @@
 ### 9. Reusing Implementations Through Inheritance
 
 * Unlike methods, fields are never overridden. A field of an object is always associated with the reference type of the varaible referring to the object.
+* _Polymorphism_: Subclasses can define their own unique behaviors and yet share some of the same functionality of the parent class.
 
 ### 10. Programming Abstractly Through Interfaces
 
@@ -47,7 +54,7 @@
 ### 11. Handling Exceptions
 
 * Including throws clause for unchecked exceptions on a method declaration is redundant, however it doesn't harm if we still indicate such an exception on the method's declaration.
-* Unchecked exceptions do not need a exception handling mechanism for the code to compile.
+* Unchecked exceptions do not need an exception handling mechanism for the code to compile.
 * When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
 
 ### 12. Understanding Modules
