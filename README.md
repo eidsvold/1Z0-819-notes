@@ -60,7 +60,7 @@ public class Test {
     public static void main(String[] args) { }
 }
 ```
-* _What is the output of the code above?_ All members of the given class are static, hence they are initialized and executed when the class is laoded. The emptiness of the _main_ method doesn't affect that process. The expressions initializing the two static fields as well as the static initialization block are executed in the order they are defined. As a result, the string **_abc_** is printed when the _Test_ class is loaded.
+* _What is the output of the code above?_ All members of the given class are static, hence they are initialized and executed when the class is loaded. The emptiness of the _main_ method doesn't affect that process. The expressions initializing the two static fields as well as the static initialization block are executed in the order they are defined. As a result, the string **_abc_** is printed when the _Test_ class is loaded.
 
 ### 8. Applying Encapsulation
 
