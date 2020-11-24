@@ -15,6 +15,10 @@
 6. [Describing and Using Objects and Classes](#6-Describing-and-Using-Objects-and-Classes)
 7. [Creating and Using Methods](#7-Creating-and-Using-Methods)
 8. [Applying Encapsulation](#8-Applying-Encapsulation)
+9. [Reusing Implementations Through Inheritance](#9-Reusing-Implementations-Through-Inheritance)
+10. [Programming Abstractly Through Interfaces](#10-Programming-Abstractly-Through-Interfaces)
+11. [Handling Exceptions](#11-Handling-Exceptions)
+12. [Understanding Modules](#12-Understanding-Modules)
 
 ### 1. Creating a Simple Java Program
 
