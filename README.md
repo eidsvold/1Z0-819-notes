@@ -47,7 +47,7 @@ public class Test {
     static String text1 = printAndEcho("a");
 
     static {
-        pringAndEcho("b");
+        printAndEcho("b");
     }
 
     static String text2 = printAndEcho("c");
@@ -60,7 +60,7 @@ public class Test {
     public static void main(String[] args) { }
 }
 ```
-* What is the output of the code above? All members of the given class are static, hence they are initialized and executed when the class is laoded. The emptiness of the _main_ method doesn't affect that process. The expressions initializing the two static fields as well as the static initialization block are executed in the order they are defined. As a result, the string **_abc_** is printed when the _Test_ class is loaded.
+* _What is the output of the code above?_ All members of the given class are static, hence they are initialized and executed when the class is laoded. The emptiness of the _main_ method doesn't affect that process. The expressions initializing the two static fields as well as the static initialization block are executed in the order they are defined. As a result, the string **_abc_** is printed when the _Test_ class is loaded.
 
 ### 8. Applying Encapsulation
 
@@ -83,6 +83,7 @@ public class Test {
 * Including throws clause for unchecked exceptions on a method declaration is redundant, however it doesn't harm if we still indicate such an exception on the method's declaration.
 * Unchecked exceptions do not need an exception handling mechanism for the code to compile.
 * When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
+* A _finally_ block, if existent, **must** be the last block in an exception handling handler, or else it is a compile-time error.
 
 ### 12. Understanding Modules
 
