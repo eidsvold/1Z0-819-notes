@@ -42,6 +42,10 @@
 
 ### 7. Creating and Using Methods
 
+```Java
+public String java = "Hey";
+```
+
 ### 8. Applying Encapsulation
 
 ### 9. Reusing Implementations Through Inheritance
