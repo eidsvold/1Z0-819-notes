@@ -42,9 +42,13 @@
 
 ### 10. Programming Abstractly Through Interfaces
 
-* When a field is declared in an interface, it's by default _public_, _static_ and _final_. Not initializing a declared field in an interdface will lead to a **compile-time error**.
+* When a field is declared in an interface, it's by default _public_, _static_ and _final_. Not initializing a declared field in an interface will lead to a **compile-time error**.
 
 ### 11. Handling Exceptions
+
+* Including throws clause for unchecked exceptions on a method declaration is redundant, however it doesn't harm if we still indicate such an exception on the method's declaration.
+* Unchecked exceptions do not need a exception handling mechanism for the code to compile.
+* When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
 
 ### 12. Understanding Modules
 
