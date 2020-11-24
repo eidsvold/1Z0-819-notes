@@ -46,4 +46,6 @@
 
 ### 12. Understanding Modules
 
+* In addition to explicit dependencies, all modules depend on the base module (java.base).
+
 ## Java SE 11 Programmer II 1Z0-816
