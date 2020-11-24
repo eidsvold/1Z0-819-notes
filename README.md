@@ -5,7 +5,7 @@
 
 ## Java SE 11 Programmer I 1Z0-815
 
-[Tim Buchalka's video course at Udemy](https://www.udemy.com/course/java-se-11-developer-1z0-819-ocp-course-part-1/ "Java SE 11 Developer 1Z0-819 OCP Course - Part 1 at Udemy")
+[_Tim Buchalka's video course at Udemy_](https://www.udemy.com/course/java-se-11-developer-1z0-819-ocp-course-part-1/ "Java SE 11 Developer 1Z0-819 OCP Course - Part 1 at Udemy")
 
 - [1. Creating a Simple Java Program](#1.-Creating-a-Simple-Java-Program)
 
