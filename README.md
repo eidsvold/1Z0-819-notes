@@ -42,6 +42,8 @@
 
 ### 10. Programming Abstractly Through Interfaces
 
+* When a field is declared in an interface, it's by default _public_, _static_ and _final_. Not initializing a declared field in an interdface will lead to a **compile-time error**.
+
 ### 11. Handling Exceptions
 
 ### 12. Understanding Modules
