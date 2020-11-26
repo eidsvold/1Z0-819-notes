@@ -29,6 +29,7 @@
 ### 3. Working With Primitive Data Types and String APIs
 
 * A _String_ object is immutable - in cannot be changed after being created. The _concat_ method appends the string argument to the end of the current string and returns the concatenation - hence the varible must be reassigned or assigned to another variable.
+* The _StringBuilder_ method _delete_ removes characters from index inclusive to index exclusive: ```Java StringBuilder builder = new StringBuilder("ABCDE").delete(1, 2);``` 
 
 ### 4. Using Operators and Decision Constructs
 
