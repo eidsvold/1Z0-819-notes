@@ -30,6 +30,7 @@
 
 * A _String_ object is immutable - in cannot be changed after being created. The _concat_ method appends the string argument to the end of the current string and returns the concatenation - hence the varible must be reassigned or assigned to another variable.
 * The _StringBuilder_ method _delete_ removes characters from **index inclusive to index exclusive**, e.g. ```StringBuilder builder = new StringBuilder("ABCDE").delete(1, 2);``` removes only the ```"B"``` from the builder object.
+* Remember when dividing with integers, the decimal point is always removed (number is floored). E.g. if you divide ```-2 by 4``` on a calculator, you get ```-0.5```. When working with integers in Java, this results in ```0```.
 
 ### 4. Using Operators and Decision Constructs
 
