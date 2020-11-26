@@ -47,7 +47,7 @@ int[] array2 = {1, 3};
 
 int result = Arrays.compare(array1, array2); // result = -1
 ```
-The method returns -1 because while the first element of the two is equal, the second element of array1 is **less than** the second element of array2. Therefore, the comparison stops and result in a negative number.
+The method returns ```-1``` because while the first element of the two is equal, the second element of array1 is **less than** the second element of array2. Therefore, the comparison stops and result in a negative number.
 If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
 
 ### 6. Describing and Using Objects and Classes
