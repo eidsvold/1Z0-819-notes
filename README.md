@@ -31,14 +31,24 @@
 * A _String_ object is immutable - in cannot be changed after being created. The _concat_ method appends the string argument to the end of the current string and returns the concatenation - hence the varible must be reassigned or assigned to another variable.
 * The _StringBuilder_ method _delete_ removes characters from **index inclusive to index exclusive**, e.g. ```StringBuilder builder = new StringBuilder("ABCDE").delete(1, 2);``` removes only the ```"B"``` from the builder object.
 * Remember when dividing with integers, the decimal point is always removed (number is floored). E.g. if you divide ```-2 by 4``` on a calculator, you get ```-0.5```. When working with integers in Java, this results in ```0```.
+* The _String_ _lastIndexOf_ method searches backwards for the substring provided, returning the index of the first character in the substring. When providing a second argument, the search will start, backwards, at the index provided.
 
 ### 4. Using Operators and Decision Constructs
 
 * A _**switch** statement_ can only work with the following primitive data types: _byte_, _short_, _char_, and _int_. It also works with _enumerated types_, the _String_ class, and a few special classes that wrap certain primitive types: _Character_, _Byte_, _Short_ and _Integer_.
-
+* The _default_ label in a **switch** statement only matches an argument if all the other labels don't, **regardless of its position**. If a case block is returning a value, the switch statement exits when a case matches the argument.
 ### 5. Working with Java Arrays
 
-* 
+* The _Arrays.compare_ method returns the value ```0``` if the first and second array are equal and contain the same elements in the same order; a value **less than** ```0``` if the first array is _lexicographically_ less than the second array; and a value **greater than** ```0``` if the first array is _lexicographically_ greater than the second array. The method compares two and two elements at an index within the respective arrays.
+Given:
+```Java
+int[] array1 = {1, 2, 3};
+int[] array2 = {1, 3};
+
+int result = Arrays.compare(array1, array2); // result = -1
+```
+The method returns -1 because while the first element of the two is equal, the second element of array1 is **less than** the second element of array2. Therefore, the comparison stops and result in a negative number.
+If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
 
 ### 6. Describing and Using Objects and Classes
 
@@ -72,6 +82,7 @@ public class Test {
 * _Polymorphism_: Subclasses can define their own unique behaviors and yet share some of the same functionality of the parent class.
 * If a superclass have at least one constructor declared, the compiler will back off and not automatically generate a no-argument constructor. If a constructor is declared in the superclass, and there is no no-arguments constructor declared, any subclass that inherits the superclass **must** make an explicit call to its superclass' constructor.
 * An _abstract_ method can **only** be defined in an _abstract_ class or an interface.
+* An _abstract_ method is **always** NON-static.
 
 ### 10. Programming Abstractly Through Interfaces
 
