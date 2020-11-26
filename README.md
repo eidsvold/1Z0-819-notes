@@ -71,6 +71,7 @@ public class Test {
 * Unlike methods, fields are never overridden. A field of an object is always associated with the reference type of the varaible referring to the object.
 * _Polymorphism_: Subclasses can define their own unique behaviors and yet share some of the same functionality of the parent class.
 * If a superclass have at least one constructor declared, the compiler will back off and not automatically generate a no-argument constructor. If a constructor is declared in the superclass, and there is no no-arguments constructor declared, any subclass that inherits the superclass **must** make an explicit call to its superclass' constructor.
+* An _abstract_ method can **only** be defined in an _abstract_ class or an interface.
 
 ### 10. Programming Abstractly Through Interfaces
 
@@ -79,6 +80,7 @@ public class Test {
 * An implementation class can define a field with the same name as a field in the interface it's implementing: doing so just **hides** the field in the interface.
 * Overloading methods doesn't need to have a less restrictive access modifier; overriding methods does.
 * An interface field is a constant, meaning it cannot be changed in an implementation class (ref. _final_ by default).
+* A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
 
 ### 11. Handling Exceptions
 
@@ -91,5 +93,6 @@ public class Test {
 
 * In addition to explicit dependencies, all modules depend on the base module (java.base).
 * The _exports_ directive specify packages - it has **nothing** to do with the module graph.
+* A module must explicitly require a depending module. Exporting a package in one module to another specific module does not exempt the target module from explicitly requiring the dependency module.
 
 ## Java SE 11 Programmer II 1Z0-816
