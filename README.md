@@ -23,6 +23,8 @@
 ### 1. Creating a Simple Java Program
 
 * The _-d_ option of the _javac_ command sets the destination directory for class files. If a class is part of a package, then _javac_ puts the class file in a subdirectory that reflects the package name and creates directories as needed.
+* When launching a program with the java command, the _classpath_ option ```-classpath``` indicates a semicolon ```;``` separated list of directories, JAR archives, and ZIP archives to search for class files. E.g. executing a program with class files stored in two directories: ```java -classpath dir1;dir2 MainClass```.
+
 
 ### 2. Understanding Java Technology and Environment
 
@@ -92,6 +94,7 @@ public class Test {
 * Overloading methods doesn't need to have a less restrictive access modifier; overriding methods does.
 * An interface field is a constant, meaning it cannot be changed in an implementation class (ref. _final_ by default).
 * A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
+* A field defined within a subtype can hide fields of the same name in supertypes, but a field defined in a supertype cannot hide other fields in other supertypes.
 
 ### 11. Handling Exceptions
 
