@@ -42,6 +42,7 @@
 * The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 * A local variable is visible only within the method or block where it's declared.
+* 
 
 ### 4. Using Operators and Decision Constructs
 
@@ -93,6 +94,7 @@ public class Test {
 * When a static field is declared as _final_, it must be set when the class is loaded. This can be dine by initializing the fielld at the declaration point or using a static initialization block.
 
 ### 8. Applying Encapsulation
+* 
 
 ### 9. Reusing Implementations Through Inheritance
 
