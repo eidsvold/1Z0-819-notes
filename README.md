@@ -24,7 +24,8 @@
 
 * The _-d_ option of the _javac_ command sets the destination directory for class files. If a class is part of a package, then _javac_ puts the class file in a subdirectory that reflects the package name and creates directories as needed.
 * When launching a program with the java command, the _classpath_ option ```-classpath``` indicates a semicolon ```;``` separated list of directories, JAR archives, and ZIP archives to search for class files. E.g. executing a program with class files stored in two directories: ```java -classpath dir1;dir2 MainClass```.
-
+* The _java.lang_ package is imported into all types by default, hence importing this package is redundant and can be removed without affecting the program.
+* Types are only loaded when they are **first referenced** in the code. This means an _import_ statement with the asterisk ```*``` character doesn't load all types in a package.
 
 ### 2. Understanding Java Technology and Environment
 * The Java Development Kit (JDK) is the only software required to set up a development environment.
@@ -39,13 +40,14 @@
 * The _String_ _split_ method splits a string around matches of a given regular expression. The limit argument (a second argument) controls the number of times the pattern is applied and therefore affects the length of the resulting array. If the _limit_ is positive then the pattern will be applied at most _limit_ - 1 times, the array's length will be no greater than _limit_, and the array's last entry will contain all input beyond the last matched delimeter.
 * A local variable is different to a class-level field in that it's **not** automatically set to the default value of its type. Checking a local variable that hasn't been set results in a compile-time error.
 * The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
+* _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 
 ### 4. Using Operators and Decision Constructs
 
 * A _**switch** statement_ can only work with the following primitive data types: _byte_, _short_, _char_, and _int_. It also works with _enumerated types_, the _String_ class, and a few special classes that wrap certain primitive types: _Character_, _Byte_, _Short_ and _Integer_.
 * The _default_ label in a **switch** statement only matches an argument if all the other labels don't, **regardless of its position**. If a case block is returning a value, the switch statement exits when a case matches the argument.
 * The _break_ statement in a loop exits the construct right away, and the _continue_ statement skips to the next iteration of the construct.
-*
+* 
 
 ### 5. Working with Java Arrays
 
@@ -97,7 +99,7 @@ public class Test {
 * If a superclass have at least one constructor declared, the compiler will back off and not automatically generate a no-argument constructor. If a constructor is declared in the superclass, and there is no no-arguments constructor declared, any subclass that inherits the superclass **must** make an explicit call to its superclass' constructor.
 * An _abstract_ method can **only** be defined in an _abstract_ class or an interface.
 * An _abstract_ method is **always** NON-static.
-* 
+* Static methods are not overridden, but hidden. The @Override annotation doesn't apply to method hiding.
 
 ### 10. Programming Abstractly Through Interfaces
 
@@ -108,9 +110,9 @@ public class Test {
 * An interface field is a constant, meaning it cannot be changed in an implementation class (ref. _final_ by default).
 * A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
 * A field defined within a subtype can hide fields of the same name in supertypes, but a field defined in a supertype cannot hide other fields in other supertypes.
-* The _ArrayList_ _remove_ method removes the **first occurrence** of the specified element.
-* The _ArrayList_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
-* 
+* The _List_ _remove_ method removes the **first occurrence** of the specified element.
+* The _List_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
+* The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
 
 ### 11. Handling Exceptions
 
@@ -126,5 +128,8 @@ public class Test {
 * A module must explicitly require a depending module. Exporting a package in one module to another specific module does not exempt the target module from explicitly requiring the dependency module.
 * You use the ```jdeps``` command to launch the Java class dependency analyzer.
 * You can produce a dependency summary by using the _jdeps_ command with the _-s_ or _-summary_ option. E.g. ```jdeps --module-path . -s foo```.
+* With the modular JDK, we can create custom runtimes consisting of only modules needed for our apps or the devices we're targeting. This means the runtime's size can be much smaller than it was.
+* With the modular JDK, internal APIs used by the platform itself are encapsulated and hidden from applications.
+* When an application fires up, the JVM walks through the module graph. If any module is missing, the JVM produces an error and shuts down. This helps avoid catastrophic consequences if sucj an issue were only found at runtime.
 
 ## Java SE 11 Programmer II 1Z0-816
