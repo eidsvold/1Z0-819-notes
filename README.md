@@ -27,6 +27,8 @@
 
 
 ### 2. Understanding Java Technology and Environment
+* The Java Development Kit (JDK) is the only software required to set up a development environment.
+* The Java Runtime Environment (JRE) is used to run a compiled program instead of working with source files.
 
 ### 3. Working With Primitive Data Types and String APIs
 
@@ -35,12 +37,15 @@
 * Remember when dividing with integers, the decimal point is always removed (number is floored). E.g. if you divide ```-2 by 4``` on a calculator, you get ```-0.5```. When working with integers in Java, this results in ```0```.
 * The _String_ _lastIndexOf_ method searches backwards for the substring provided, returning the index of the first character in the substring. When providing a second argument, the search will start, backwards, at the index provided.
 * The _String_ _split_ method splits a string around matches of a given regular expression. The limit argument (a second argument) controls the number of times the pattern is applied and therefore affects the length of the resulting array. If the _limit_ is positive then the pattern will be applied at most _limit_ - 1 times, the array's length will be no greater than _limit_, and the array's last entry will contain all input beyond the last matched delimeter.
+* A local variable is different to a class-level field in that it's **not** automatically set to the default value of its type. Checking a local variable that hasn't been set results in a compile-time error.
+* The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
 
 ### 4. Using Operators and Decision Constructs
 
 * A _**switch** statement_ can only work with the following primitive data types: _byte_, _short_, _char_, and _int_. It also works with _enumerated types_, the _String_ class, and a few special classes that wrap certain primitive types: _Character_, _Byte_, _Short_ and _Integer_.
 * The _default_ label in a **switch** statement only matches an argument if all the other labels don't, **regardless of its position**. If a case block is returning a value, the switch statement exits when a case matches the argument.
 * The _break_ statement in a loop exits the construct right away, and the _continue_ statement skips to the next iteration of the construct.
+*
 
 ### 5. Working with Java Arrays
 
@@ -54,8 +59,7 @@ int result = Arrays.compare(array1, array2); // result = -1
 ```
 The method returns ```-1``` because while the first element of the two is equal, the second element of array1 is **less than** the second element of array2. Therefore, the comparison stops and result in a negative number.
 If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
-* The _ArrayList_ _remove_ method removes the **first occurrence** of the specified element.
-* The _ArrayList_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
+* The _Arrays_ _fill_ method assigns the specified Object reference to each element of the specified array of Objects.
 
 ### 6. Describing and Using Objects and Classes
 
@@ -81,6 +85,8 @@ public class Test {
 ```
 * _What is the output of the code above?_ All members of the given class are static, hence they are initialized and executed when the class is loaded. The emptiness of the _main_ method doesn't affect that process. The expressions initializing the two static fields as well as the static initialization block are executed in the order they are defined. As a result, the string **_abc_** is printed when the _Test_ class is loaded.
 * A call to **_this()__** or **_super()_** inside a constructor, if any, **must** be the **first** statement. Of course _this()_ and _super()_ cannot be the first statement at the same time, meaning that we cannot call more than one constructor inside the body of another constructor.
+* Passing a _String_ parameter to a method and modifying the parameter won't change the original object as _String_ is immutable.
+* Unlike an object reference parameter that keeps the address of the passed-in argument, a primitive parameter stores a copy of the argument itself. Any changes made to this parameter only impact the copy, not the original value.
 
 ### 8. Applying Encapsulation
 
@@ -102,7 +108,9 @@ public class Test {
 * An interface field is a constant, meaning it cannot be changed in an implementation class (ref. _final_ by default).
 * A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
 * A field defined within a subtype can hide fields of the same name in supertypes, but a field defined in a supertype cannot hide other fields in other supertypes.
-* The 
+* The _ArrayList_ _remove_ method removes the **first occurrence** of the specified element.
+* The _ArrayList_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
+* 
 
 ### 11. Handling Exceptions
 
