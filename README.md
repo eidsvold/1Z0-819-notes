@@ -54,6 +54,8 @@ int result = Arrays.compare(array1, array2); // result = -1
 ```
 The method returns ```-1``` because while the first element of the two is equal, the second element of array1 is **less than** the second element of array2. Therefore, the comparison stops and result in a negative number.
 If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
+* The _ArrayList_ _remove_ method removes the **first occurrence** of the specified element.
+* The _ArrayList_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
 
 ### 6. Describing and Using Objects and Classes
 
@@ -89,6 +91,7 @@ public class Test {
 * If a superclass have at least one constructor declared, the compiler will back off and not automatically generate a no-argument constructor. If a constructor is declared in the superclass, and there is no no-arguments constructor declared, any subclass that inherits the superclass **must** make an explicit call to its superclass' constructor.
 * An _abstract_ method can **only** be defined in an _abstract_ class or an interface.
 * An _abstract_ method is **always** NON-static.
+* 
 
 ### 10. Programming Abstractly Through Interfaces
 
@@ -99,6 +102,7 @@ public class Test {
 * An interface field is a constant, meaning it cannot be changed in an implementation class (ref. _final_ by default).
 * A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
 * A field defined within a subtype can hide fields of the same name in supertypes, but a field defined in a supertype cannot hide other fields in other supertypes.
+* The 
 
 ### 11. Handling Exceptions
 
