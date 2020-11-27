@@ -41,6 +41,7 @@
 * A local variable is different to a class-level field in that it's **not** automatically set to the default value of its type. Checking a local variable that hasn't been set results in a compile-time error.
 * The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
+* A local variable is visible only within the method or block where it's declared.
 
 ### 4. Using Operators and Decision Constructs
 
@@ -89,6 +90,7 @@ public class Test {
 * A call to **_this()__** or **_super()_** inside a constructor, if any, **must** be the **first** statement. Of course _this()_ and _super()_ cannot be the first statement at the same time, meaning that we cannot call more than one constructor inside the body of another constructor.
 * Passing a _String_ parameter to a method and modifying the parameter won't change the original object as _String_ is immutable.
 * Unlike an object reference parameter that keeps the address of the passed-in argument, a primitive parameter stores a copy of the argument itself. Any changes made to this parameter only impact the copy, not the original value.
+* When a static field is declared as _final_, it must be set when the class is loaded. This can be dine by initializing the fielld at the declaration point or using a static initialization block.
 
 ### 8. Applying Encapsulation
 
@@ -113,6 +115,7 @@ public class Test {
 * The _List_ _remove_ method removes the **first occurrence** of the specified element.
 * The _List_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
 * The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
+* The _List_ _copyOf_ method returns an modifiable list containing elements of the original one. Calling any mutator method on the _List_ will **always** cause **_UnsupportedOperationException_** to be thrown.
 
 ### 11. Handling Exceptions
 
