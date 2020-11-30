@@ -27,6 +27,7 @@
 * The _java.lang_ package is imported into all types by default, hence importing this package is redundant and can be removed without affecting the program.
 * Types are only loaded when they are **first referenced** in the code. This means an _import_ statement with the asterisk ```*``` character doesn't load all types in a package.
 * To use a static member of a type directly in another type, we must use a **static import statement**. We can either import that particular static member: ```import static foo.MyFoo.myField``` or import all static members of the enclosing type: ```import static foo.MyFoo.*```.
+* The entry method of a program **must be** a _public static_ method. Its name **must be** _main_, the parameter type **must be** _String[]_ or _String..._, and the return type **must be** _void_. **!!**: The parameter name as well as the order of the modifiers **are not** important.
 
 ### 2. Understanding Java Technology and Environment
 * The Java Development Kit (JDK) is the only software required to set up a development environment.
@@ -45,6 +46,7 @@
 * A local variable is visible only within the method or block where it's declared.
 * When the _intern_ method is invoked, if the pool already contains a string equal to this _String_ object as determined by the _equals(Object)_ method, then the string from the pool is returned. Otherwise, this _String_ object is added to the pool and a reference to this _String_ object is returned.
 * The _replace_ method with 2 _char_ parameters simply returns the same _String_ object it's called on, if those two parameters are the same. The _replace_ method with two _CharSequence_ parameters and the _replaceAll_ method always return a new object.
+* 
 
 ### 4. Using Operators and Decision Constructs
 
@@ -154,7 +156,8 @@ public class Test {
 * Unchecked exceptions do not need an exception handling mechanism for the code to compile.
 * When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
 * A _finally_ block, if existent, **must** be the last block in an exception handling handler, or else it is a compile-time error.
-* The compiler doesn't evaluate any expression at compile time: thus, it must prepare for all possible workflows. 
+* The compiler doesn't evaluate any expression at compile time: thus, it must prepare for all possible workflows.
+* 
 
 ### 12. Understanding Modules
 
@@ -167,5 +170,9 @@ public class Test {
 * With the modular JDK, internal APIs used by the platform itself are encapsulated and hidden from applications.
 * When an application fires up, the JVM walks through the module graph. If any module is missing, the JVM produces an error and shuts down. This helps avoid catastrophic consequences if sucj an issue were only found at runtime.
 * The ```-p``` and ```--module-path``` options specify where to find application modules, when compiling source files with the ```javac``` command.
+* Executing a modular program:
+  * The main module and all the dependency modules must be added to the module path. This module path is indicated by the _-m_ or _-module-path_ option.
+  * When adding a module in a JAR file to the module path, we can specify that file or its containing directory.
+  * The main class to be run must be specified under the containing module with the _-m_ or _--module_ option.
 
 ## Java SE 11 Programmer II 1Z0-816
