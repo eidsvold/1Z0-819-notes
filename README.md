@@ -42,7 +42,8 @@
 * The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 * A local variable is visible only within the method or block where it's declared.
-* 
+* A _do_ _statement_ can complete normally if and only if at least one of the following is true:
+        - The contained statement can complete normally and the condition expression is not a constant expression with value true.
 
 ### 4. Using Operators and Decision Constructs
 
@@ -104,6 +105,7 @@ public class Test {
 * An _abstract_ method can **only** be defined in an _abstract_ class or an interface.
 * An _abstract_ method is **always** NON-static.
 * Static methods are not overridden, but hidden. The @Override annotation doesn't apply to method hiding.
+* 
 
 ### 10. Programming Abstractly Through Interfaces
 
