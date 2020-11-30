@@ -99,6 +99,10 @@ public class Test {
 * Passing a _String_ parameter to a method and modifying the parameter won't change the original object as _String_ is immutable.
 * Unlike an object reference parameter that keeps the address of the passed-in argument, a primitive parameter stores a copy of the argument itself. Any changes made to this parameter only impact the copy, not the original value.
 * When a static field is declared as _final_, it must be set when the class is loaded. This can be dine by initializing the fielld at the declaration point or using a static initialization block.
+* When calling overloaded methods with a given argument, the compiler determines the applicable method by **following these three phases**:
+  * The **first phase** performs overload resolution without permitting boxing or unboxing conversion, or the use of variable arity method invocation. If no applicable method is found during first phase, then processing continues to the second phase.
+  * The **second phase** performs overload resolution while allowing boxing and unboxing, but still precludes the use of variable arity method invocation. If no applicable method is found during the second phase, then processing continues to the thirs phase.
+  * The **third phase** allows overloading to be combined with variable arity methods, boxing, and unboxing.
 
 ### 8. Applying Encapsulation
 * 
