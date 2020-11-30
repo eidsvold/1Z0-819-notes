@@ -44,6 +44,7 @@
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 * A local variable is visible only within the method or block where it's declared.
 * When the _intern_ method is invoked, if the pool already contains a string equal to this _String_ object as determined by the _equals(Object)_ method, then the string from the pool is returned. Otherwise, this _String_ object is added to the pool and a reference to this _String_ object is returned.
+* The _replace_ method with 2 _char_ parameters simply returns the same _String_ object it's called on, if those two parameters are the same. The _replace_ method with two _CharSequence_ parameters and the _replaceAll_ method always return a new object.
 
 ### 4. Using Operators and Decision Constructs
 
@@ -55,6 +56,7 @@
   * The _do_ statement contains a reachable continue statement with no label, and the _do_ statement is the innermost _while_, _do_, or _for_ statement that contains that continue statement, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
   * The _do_ statement contains a reachable continue statement with a label _L_, and the _do_ statement has label _L_, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
   * There is a reachable break statement that exits the _do_ statement.
+  * 
 
 ### 5. Working with Java Arrays
 
@@ -134,6 +136,7 @@ public class Test {
 * Unchecked exceptions do not need an exception handling mechanism for the code to compile.
 * When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
 * A _finally_ block, if existent, **must** be the last block in an exception handling handler, or else it is a compile-time error.
+* The compiler doesn't evaluate any expression at compile time: thus, it must prepare for all possible workflows. 
 
 ### 12. Understanding Modules
 
