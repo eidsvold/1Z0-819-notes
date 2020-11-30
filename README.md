@@ -43,7 +43,7 @@
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 * A local variable is visible only within the method or block where it's declared.
 * A _do_ _statement_ can complete normally if and only if at least one of the following is true:
-        - The contained statement can complete normally and the condition expression is not a constant expression with value true.
+  * The contained statement can complete normally and the condition expression is not a constant expression with value true.
 
 ### 4. Using Operators and Decision Constructs
 
