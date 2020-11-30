@@ -56,9 +56,9 @@
   * The _do_ statement contains a reachable continue statement with no label, and the _do_ statement is the innermost _while_, _do_, or _for_ statement that contains that continue statement, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
   * The _do_ statement contains a reachable continue statement with a label _L_, and the _do_ statement has label _L_, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
   * There is a reachable break statement that exits the _do_ statement.
- 
-Given:
+
 ```Java
+// Given:
 List list = List.of("a", "b");
 for (String element : list) {
     switch(element) {
@@ -69,6 +69,7 @@ for (String element : list) {
     System.out.println(element);
 }
 ```
+The _continue_ statement is **not applicable** in a _switch construct_. In the given code snippet, the _continue_ statement doesn't skip a switch label, but rather the current iteration of the _foreach_ loop. Each time a switch label is matched, the _continue_ statement gets executed, skipping the rest of the foreach construct. This makes the ```System.out.println(element);``` statement unreachable, thereby causing a compile-time error.
 
 ### 5. Working with Java Arrays
 
