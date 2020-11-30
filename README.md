@@ -26,6 +26,7 @@
 * When launching a program with the java command, the _classpath_ option ```-classpath``` indicates a semicolon ```;``` separated list of directories, JAR archives, and ZIP archives to search for class files. E.g. executing a program with class files stored in two directories: ```java -classpath dir1;dir2 MainClass```.
 * The _java.lang_ package is imported into all types by default, hence importing this package is redundant and can be removed without affecting the program.
 * Types are only loaded when they are **first referenced** in the code. This means an _import_ statement with the asterisk ```*``` character doesn't load all types in a package.
+* To use a static member of a type directly in another type, we must use a **static import statement**. We can either import that particular static member: ```import static foo.MyFoo.myField``` or import all static members of the enclosing type: ```import static foo.MyFoo.*```.
 
 ### 2. Understanding Java Technology and Environment
 * The Java Development Kit (JDK) is the only software required to set up a development environment.
@@ -108,6 +109,8 @@ public class Test {
 * An _abstract_ method can **only** be defined in an _abstract_ class or an interface.
 * An _abstract_ method is **always** NON-static.
 * Static methods are not overridden, but hidden. The @Override annotation doesn't apply to method hiding.
+* A _non-static_ method **cannot** override a static method. It will cause a compile-time error.
+* A static method **cannot** hide a _non-static_ method. It will cause a compile-time error.
 * 
 
 ### 10. Programming Abstractly Through Interfaces
@@ -123,6 +126,7 @@ public class Test {
 * The _List_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
 * The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
 * The _List_ _copyOf_ method returns an modifiable list containing elements of the original one. Calling any mutator method on the _List_ will **always** cause **_UnsupportedOperationException_** to be thrown.
+* 
 
 ### 11. Handling Exceptions
 
