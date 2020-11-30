@@ -42,8 +42,11 @@
 * The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 * A local variable is visible only within the method or block where it's declared.
-* A _do_ _statement_ can complete normally if and only if at least one of the following is true:
-  * The contained statement can complete normally and the condition expression is not a constant expression with value true.
+* A _do_ _statement_ can complete normally **if and only if at least one** of the following is true:
+  * The contained statement can complete normally and the condition expression **is not a constant** expression with value true.
+  * The _do_ statement contains a reachable continue statement with no label, and the _do_ statement is the innermost _while_, _do_, or _for_ statement that contains that continue statement, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
+  * The _do_ statement contains a reachable continue statement with a label _L_, and the _do_ statement has label _L_, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
+  * There is a reachable break statement that exits the _do_ statement.
 
 ### 4. Using Operators and Decision Constructs
 
