@@ -42,18 +42,18 @@
 * The _String_ passed to the _LocalDateTime_ _parse_ method must represent a valid date-time and is parsed using _DateTimeFormatter.ISO_LOCAL_DATE_TIME_. A time component must be present in the _String_.
 * _var_ can **not** be used for fields, constructors and method parameters, as well as method return types.
 * A local variable is visible only within the method or block where it's declared.
-* A _do_ _statement_ can complete normally **if and only if at least one** of the following is true:
-  * The contained statement can complete normally and the condition expression **is not a constant** expression with value true.
-  * The _do_ statement contains a reachable continue statement with no label, and the _do_ statement is the innermost _while_, _do_, or _for_ statement that contains that continue statement, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
-  * The _do_ statement contains a reachable continue statement with a label _L_, and the _do_ statement has label _L_, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
-  * There is a reachable break statement that exits the _do_ statement.
+* When the _intern_ method is invoked, if the pool already contains a string equal to this _String_ object as determined by the _equals(Object)_ method, then the string from the pool is returned. Otherwise, this _String_ object is added to the pool and a reference to this _String_ object is returned.
 
 ### 4. Using Operators and Decision Constructs
 
 * A _**switch** statement_ can only work with the following primitive data types: _byte_, _short_, _char_, and _int_. It also works with _enumerated types_, the _String_ class, and a few special classes that wrap certain primitive types: _Character_, _Byte_, _Short_ and _Integer_.
 * The _default_ label in a **switch** statement only matches an argument if all the other labels don't, **regardless of its position**. If a case block is returning a value, the switch statement exits when a case matches the argument.
 * The _break_ statement in a loop exits the construct right away, and the _continue_ statement skips to the next iteration of the construct.
-* 
+* A _do_ _statement_ can complete normally **if and only if at least one** of the following is true:
+  * The contained statement can complete normally and the condition expression **is not a constant** expression with value true.
+  * The _do_ statement contains a reachable continue statement with no label, and the _do_ statement is the innermost _while_, _do_, or _for_ statement that contains that continue statement, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
+  * The _do_ statement contains a reachable continue statement with a label _L_, and the _do_ statement has label _L_, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
+  * There is a reachable break statement that exits the _do_ statement.
 
 ### 5. Working with Java Arrays
 
