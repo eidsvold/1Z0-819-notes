@@ -56,7 +56,19 @@
   * The _do_ statement contains a reachable continue statement with no label, and the _do_ statement is the innermost _while_, _do_, or _for_ statement that contains that continue statement, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
   * The _do_ statement contains a reachable continue statement with a label _L_, and the _do_ statement has label _L_, and the continue statement continues that _do_ statement, and the condition expression **is not a constant** expression with value true.
   * There is a reachable break statement that exits the _do_ statement.
-  * 
+ 
+Given:
+```Java
+List list = List.of("a", "b");
+for (String element : list) {
+    switch(element) {
+        case "b":
+        default:
+            continue;
+    }
+    System.out.println(element);
+}
+```
 
 ### 5. Working with Java Arrays
 
@@ -71,6 +83,7 @@ int result = Arrays.compare(array1, array2); // result = -1
 The method returns ```-1``` because while the first element of the two is equal, the second element of array1 is **less than** the second element of array2. Therefore, the comparison stops and result in a negative number.
 If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
 * The _Arrays_ _fill_ method assigns the specified Object reference to each element of the specified array of Objects.
+* The _Arrays mismatch_ method finds and returns the index of the first mismatch between the two array arguments, otherwise return ```-1``` if no mistmatch is found.
 
 ### 6. Describing and Using Objects and Classes
 
