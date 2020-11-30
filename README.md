@@ -141,5 +141,6 @@ public class Test {
 * With the modular JDK, we can create custom runtimes consisting of only modules needed for our apps or the devices we're targeting. This means the runtime's size can be much smaller than it was.
 * With the modular JDK, internal APIs used by the platform itself are encapsulated and hidden from applications.
 * When an application fires up, the JVM walks through the module graph. If any module is missing, the JVM produces an error and shuts down. This helps avoid catastrophic consequences if sucj an issue were only found at runtime.
+* The ```-p``` and ```--module-path``` options specify where to find application modules, when compiling source files with the ```javac``` command.
 
 ## Java SE 11 Programmer II 1Z0-816
