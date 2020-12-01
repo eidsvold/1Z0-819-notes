@@ -135,6 +135,7 @@ public class Test {
 * A _non-static_ method **cannot** override a static method. It will cause a compile-time error.
 * A static method **cannot** hide a _non-static_ method. It will cause a compile-time error.
 * When method overriding occurs, the overriding method cannot specify a checked exception that isn't specified by the overridden one. Specifying unchecked exceptions are valid, and so are subtypes of the overridden one. Cannot specify an exception class a class which isn't a subtype the overridden method specified exception.
+* In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods.
 
 ### 10. Programming Abstractly Through Interfaces
 
