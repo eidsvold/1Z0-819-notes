@@ -46,7 +46,10 @@
 * A local variable is visible only within the method or block where it's declared.
 * When the _intern_ method is invoked, if the pool already contains a string equal to this _String_ object as determined by the _equals(Object)_ method, then the string from the pool is returned. Otherwise, this _String_ object is added to the pool and a reference to this _String_ object is returned.
 * The _replace_ method with 2 _char_ parameters simply returns the same _String_ object it's called on, if those two parameters are the same. The _replace_ method with two _CharSequence_ parameters and the _replaceAll_ method always return a new object.
-* 
+* We can use the underscore character to separate groups of digits in numeric literals, which can improve the readability of the code. However, such a character cannot be used at:
+  * The beginning or end of a number
+  * Adjacent to a decimal point in a floating-point literal
+  * Prior to a suffix
 
 ### 4. Using Operators and Decision Constructs
 
@@ -135,7 +138,7 @@ public class Test {
 * A _non-static_ method **cannot** override a static method. It will cause a compile-time error.
 * A static method **cannot** hide a _non-static_ method. It will cause a compile-time error.
 * When method overriding occurs, the overriding method cannot specify a checked exception that isn't specified by the overridden one. Specifying unchecked exceptions are valid, and so are subtypes of the overridden one. Cannot specify an exception class a class which isn't a subtype the overridden method specified exception.
-* In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods.
+* In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods. Field hiding occurs even if the fields in the subclass and superclass have different types.
 
 ### 10. Programming Abstractly Through Interfaces
 
