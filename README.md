@@ -95,6 +95,8 @@ If all elements in a shorter array are equal to the other array, but the other a
 * The _Arrays mismatch_ method finds and returns the index of the first mismatch between the two array arguments, otherwise return ```-1``` if no mistmatch is found.
 
 ### 6. Describing and Using Objects and Classes
+* The compiler only adds the default constructor if a class isn't defined with an explicit one.
+* Both _String_ and _StringBuilder_ classes implement the _CharSequence_ interface, thus we can pass objects of these classes to methods requiring a _CharSequence_ object.
 
 ### 7. Creating and Using Methods
 
@@ -141,6 +143,7 @@ public class Test {
 * A static method **cannot** hide a _non-static_ method. It will cause a compile-time error.
 * When method overriding occurs, the overriding method cannot specify a checked exception that isn't specified by the overridden one. Specifying unchecked exceptions are valid, and so are subtypes of the overridden one. Cannot specify an exception class a class which isn't a subtype the overridden method specified exception.
 * In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods. Field hiding occurs even if the fields in the subclass and superclass have different types.
+* 
 
 ### 10. Programming Abstractly Through Interfaces
 
