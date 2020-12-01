@@ -162,7 +162,7 @@ public class Test {
 * When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
 * A _finally_ block, if existent, **must** be the last block in an exception handling handler, or else it is a compile-time error.
 * The compiler doesn't evaluate any expression at compile time: thus, it must prepare for all possible workflows.
-* 
+* When an exception is thrown from within a _try_ block, the first exception handler whose exception type matches the exception object takes action. When we specify multiple _catch_ blocks with exception types in the same inheritance hierarchy, the bllock with the most specific type must go first, and the one with the most general type is the last.
 
 ### 12. Understanding Modules
 
