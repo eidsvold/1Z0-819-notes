@@ -50,6 +50,7 @@
   * The beginning or end of a number
   * Adjacent to a decimal point in a floating-point literal
   * Prior to a suffix
+* The _String substring_ method with 1 integer parameter returns a new string which begins with the character at the specified index and extends to the end of the string.
 
 ### 4. Using Operators and Decision Constructs
 
