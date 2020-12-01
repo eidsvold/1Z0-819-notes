@@ -77,6 +77,7 @@ for (String element : list) {
 ```
 The _continue_ statement is **not applicable** in a _switch construct_. In the given code snippet, the _continue_ statement doesn't skip a switch label, but rather the current iteration of the _foreach_ loop. Each time a switch label is matched, the _continue_ statement gets executed, skipping the rest of the foreach construct. This makes the ```System.out.println(element);``` statement unreachable, thereby causing a compile-time error.
 * Any code after a return statement in the same scope is unreachable and will lead to a compile-time error.
+* Unlike all other operators in Java, assignment operators are evaluated **from right to left**.
 
 ### 5. Working with Java Arrays
 
