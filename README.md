@@ -166,7 +166,7 @@ public class Test {
 
 ### 12. Understanding Modules
 
-* In addition to explicit dependencies, all modules depend on the base module (java.base).
+* In addition to explicit dependencies, all modules depend on the base module (java.base). If one or more modules doesn't depend on the base module in a module graph, the option is WRONG. Every module must point to the java.base module.
 * The _exports_ directive specify packages - it has **nothing** to do with the module graph.
 * A module must explicitly require a depending module. Exporting a package in one module to another specific module does not exempt the target module from explicitly requiring the dependency module.
 * You use the ```jdeps``` command to launch the Java class dependency analyzer.
