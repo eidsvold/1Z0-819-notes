@@ -80,6 +80,7 @@ for (String element : list) {
 The _continue_ statement is **not applicable** in a _switch construct_. In the given code snippet, the _continue_ statement doesn't skip a switch label, but rather the current iteration of the _foreach_ loop. Each time a switch label is matched, the _continue_ statement gets executed, skipping the rest of the foreach construct. This makes the ```System.out.println(element);``` statement unreachable, thereby causing a compile-time error.
 * Any code after a return statement in the same scope is unreachable and will lead to a compile-time error.
 * Unlike all other operators in Java, assignment operators are evaluated **from right to left**.
+* 
 
 ### 5. Working with Java Arrays
 
@@ -171,6 +172,11 @@ public class Test {
 * A _finally_ block, if existent, **must** be the last block in an exception handling handler, or else it is a compile-time error.
 * The compiler doesn't evaluate any expression at compile time: thus, it must prepare for all possible workflows.
 * When an exception is thrown from within a _try_ block, the first exception handler whose exception type matches the exception object takes action. When we specify multiple _catch_ blocks with exception types in the same inheritance hierarchy, the bllock with the most specific type must go first, and the one with the most general type is the last.
+* An exception handler may contain only a _try_ block and a _finally_ block, i.e. a _try_ block must not always be followed by a _catch_ block.
+* A _finally_ block may not always execute in special cases where the JVM exits, or the blocks previous is interrupted or killed etc.
+* A _finally_ block can also throw exceptions.
+* There cannot be more than one finally block in an exception handler.
+* No code can be inserted between to adjacent blocks in an exception handler.
 
 ### 12. Understanding Modules
 
