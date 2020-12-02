@@ -32,6 +32,7 @@
 ### 2. Understanding Java Technology and Environment
 * The Java Development Kit (JDK) is the only software required to set up a development environment.
 * The Java Runtime Environment (JRE) is used to run a compiled program instead of working with source files.
+* Integrated Development Environment (IDE) and Version Control System (VCS) are very important to developing applications, but they **are not** included in the JDK.
 
 ### 3. Working With Primitive Data Types and String APIs
 
@@ -51,6 +52,7 @@
   * Adjacent to a decimal point in a floating-point literal
   * Prior to a suffix
 * The _String substring_ method with 1 integer parameter returns a new string which begins with the character at the specified index and extends to the end of the string.
+* 
 
 ### 4. Using Operators and Decision Constructs
 
@@ -97,6 +99,7 @@ If all elements in a shorter array are equal to the other array, but the other a
 ### 6. Describing and Using Objects and Classes
 * The compiler only adds the default constructor if a class isn't defined with an explicit one.
 * Both _String_ and _StringBuilder_ classes implement the _CharSequence_ interface, thus we can pass objects of these classes to methods requiring a _CharSequence_ object.
+* 
 
 ### 7. Creating and Using Methods
 
@@ -140,7 +143,7 @@ public class Test {
 * An _abstract_ method is **always** NON-static.
 * Static methods are not overridden, but hidden. The @Override annotation doesn't apply to method hiding.
 * A _non-static_ method **cannot** override a static method. It will cause a compile-time error.
-* A static method **cannot** hide a _non-static_ method. It will cause a compile-time error.
+* A static method **cannot** hide or override a _non-static_ method. It will cause a compile-time error.
 * When method overriding occurs, the overriding method cannot specify a checked exception that isn't specified by the overridden one. Specifying unchecked exceptions are valid, and so are subtypes of the overridden one. Cannot specify an exception class a class which isn't a subtype the overridden method specified exception.
 * In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods. Field hiding occurs even if the fields in the subclass and superclass have different types.
 * 
@@ -158,7 +161,7 @@ public class Test {
 * The _List_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
 * The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
 * The _List_ _copyOf_ method returns an modifiable list containing elements of the original one. Calling any mutator method on the _List_ will **always** cause **_UnsupportedOperationException_** to be thrown.
-* 
+* A static method with a body belongs to the interface its declared in, and subtypes of this interface don't even inherit that static method. Meaning they can define a method with the  exact same signature.
 
 ### 11. Handling Exceptions
 
