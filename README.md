@@ -187,5 +187,6 @@ public class Test {
   * The main module and all the dependency modules must be added to the module path. This module path is indicated by the _-m_ or _-module-path_ option.
   * When adding a module in a JAR file to the module path, we can specify that file or its containing directory.
   * The main class to be run must be specified under the containing module with the _-m_ or _--module_ option.
+* Circular dependency is forbidden in Java, leading to a compile-time error. E.g. if module _bar_ requires module _foo_, and module _foo_ requires module _bar_, the dependency is circular.
 
 ## Java SE 11 Programmer II 1Z0-816
