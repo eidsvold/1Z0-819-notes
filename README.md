@@ -24,6 +24,7 @@
 
 * The _-d_ option of the _javac_ command sets the destination directory for class files. If a class is part of a package, then _javac_ puts the class file in a subdirectory that reflects the package name and creates directories as needed.
 * When launching a program with the java command, the _classpath_ option ```-classpath``` indicates a semicolon ```;``` separated list of directories, JAR archives, and ZIP archives to search for class files. E.g. executing a program with class files stored in two directories: ```java -classpath dir1;dir2 MainClass```.
+* The **classpath** option has three forms: ```-cp```, ```-classpath``` (!! only one dash) and ```--class-path```.
 * The _java.lang_ package is imported into all types by default, hence importing this package is redundant and can be removed without affecting the program.
 * Types are only loaded when they are **first referenced** in the code. This means an _import_ statement with the asterisk ```*``` character doesn't load all types in a package.
 * To use a static member of a type directly in another type, we must use a **static import statement**. We can either import that particular static member: ```import static foo.MyFoo.myField``` or import all static members of the enclosing type: ```import static foo.MyFoo.*```.
@@ -52,7 +53,8 @@
   * Adjacent to a decimal point in a floating-point literal
   * Prior to a suffix
 * The _String substring_ method with 1 integer parameter returns a new string which begins with the character at the specified index and extends to the end of the string.
-* 
+* The _isEmpty_ method returns _true_ if and **only if** its length is 0.
+* The _isBlank_ method returns true if the string is empty or contains only white space codepoints, otherwise _false_.
 
 ### 4. Using Operators and Decision Constructs
 
