@@ -22,6 +22,7 @@
 
 ### 1. Creating a Simple Java Program
 
+* If existent, the _package_ import MUST be the **first** statement in a source file, before any other statement.
 * The _-d_ option of the _javac_ command sets the destination directory for class files. If a class is part of a package, then _javac_ puts the class file in a subdirectory that reflects the package name and creates directories as needed.
 * When launching a program with the java command, the _classpath_ option ```-classpath``` indicates a semicolon ```;``` separated list of directories, JAR archives, and ZIP archives to search for class files. E.g. executing a program with class files stored in two directories: ```java -classpath dir1;dir2 MainClass```.
 * The **classpath** option has three forms: ```-cp```, ```-classpath``` (!! only one dash) and ```--class-path```.
@@ -169,6 +170,8 @@ public class Test {
 * A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
 * A field defined within a subtype can hide fields of the same name in supertypes, but a field defined in a supertype cannot hide other fields in other supertypes.
 * The _List_ _remove_ method removes the **first occurrence** of the specified element.
+  * The _remove_ method with an _int_ parameter removes the element at the specified position and returns the element itself.
+  * The _remove_ method with an _Object_ parameter removes the first occurence of the specified element and returns _true_ if the list contains such an element, otherwise _false_.
 * The _List add_ method with two parameters inserts the specified element, denoted by the second parameter, at the specified location, denoted by the first parameter.
 * The _List_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
 * The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
