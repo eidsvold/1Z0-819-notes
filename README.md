@@ -199,6 +199,9 @@ public class Test {
 * You use the ```jdeps``` command to launch the Java class dependency analyzer.
 * You can produce a dependency summary by using the _jdeps_ command with the _-s_ or _-summary_ option. E.g. ```jdeps --module-path . -s foo```.
 * The _jdeps_ command shows the package-level or class-level dependencies of Java class files. The input class can be a path to a _.class_ file, a directory, a JAR file, or it can be a fully qualified class name (FQCN) to analyze all class files. The options determine the output. By default, the _jdeps_ command writes the dependencies to the system output. The command can generate the dependencies in DOT language (stored in _.dot_ files).
+* Here's a description of the ```--print-module-deps``` option of the _jdeps_ command:
+  * Same as ```--list-reduced-deps``` with printing a comma-separated list of module dependencies. The output can be used by ```jlink --add-modules``` to create a custom image that contains those modules and their transitive dependencies.
+  * ```jdeps --module-path . --print-module-deps foo``` prints _bar,java.base_.
 * With the modular JDK, we can create custom runtimes consisting of only modules needed for our apps or the devices we're targeting. This means the runtime's size can be much smaller than it was.
 * With the modular JDK, internal APIs used by the platform itself are encapsulated and hidden from applications.
 * When an application fires up, the JVM walks through the module graph. If any module is missing, the JVM produces an error and shuts down. This helps avoid catastrophic consequences if sucj an issue were only found at runtime.
