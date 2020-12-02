@@ -34,6 +34,7 @@
 * The Java Development Kit (JDK) is the only software required to set up a development environment.
 * The Java Runtime Environment (JRE) is used to run a compiled program instead of working with source files.
 * Integrated Development Environment (IDE) and Version Control System (VCS) are very important to developing applications, but they **are not** included in the JDK.
+* A **type** defined with no package declaration is part of an unnamed package. Such a type can be referenced from other types in the unnamed package, but is invisible to types in named packages.
 
 ### 3. Working With Primitive Data Types and String APIs
 
@@ -55,6 +56,10 @@
 * The _String substring_ method with 1 integer parameter returns a new string which begins with the character at the specified index and extends to the end of the string.
 * The _isEmpty_ method returns _true_ if and **only if** its length is 0.
 * The _isBlank_ method returns true if the string is empty or contains only white space codepoints, otherwise _false_.
+* The _trim_ and _strip_ methods in the _String_ class both remove leading and trailing spaces, but they use different definitions of white spaces;
+  * **trim**: all characters whose codepoint is less than or equal to 'U+0020'
+  * **strip**: all characters whose codepoint returns true when passed to the _Character isWhitespace_ method. We can say _strip_ is "Unicode-aware" evolution of _trim_. The **strip** method was recently added to the API, starting with Java 11.
+* 
 
 ### 4. Using Operators and Decision Constructs
 
@@ -98,11 +103,12 @@ The method returns ```-1``` because while the first element of the two is equal,
 If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
 * The _Arrays_ _fill_ method assigns the specified Object reference to each element of the specified array of Objects.
 * The _Arrays mismatch_ method finds and returns the index of the first mismatch between the two array arguments, otherwise return ```-1``` if no mistmatch is found.
+* 
 
 ### 6. Describing and Using Objects and Classes
 * The compiler only adds the default constructor if a class isn't defined with an explicit one.
 * Both _String_ and _StringBuilder_ classes implement the _CharSequence_ interface, thus we can pass objects of these classes to methods requiring a _CharSequence_ object.
-* 
+* Objects passed in as a method parameter is not eligble for garbage collection even after the method returns.
 
 ### 7. Creating and Using Methods
 
@@ -133,6 +139,7 @@ public class Test {
   * The **first phase** performs overload resolution without permitting boxing or unboxing conversion, or the use of variable arity method invocation. If no applicable method is found during first phase, then processing continues to the second phase.
   * The **second phase** performs overload resolution while allowing boxing and unboxing, but still precludes the use of variable arity method invocation. If no applicable method is found during the second phase, then processing continues to the thirs phase.
   * The **third phase** allows overloading to be combined with variable arity methods, boxing, and unboxing.
+* 
 
 ### 8. Applying Encapsulation
 * 
@@ -149,7 +156,7 @@ public class Test {
 * A static method **cannot** hide or override a _non-static_ method. It will cause a compile-time error.
 * When method overriding occurs, the overriding method cannot specify a checked exception that isn't specified by the overridden one. Specifying unchecked exceptions are valid, and so are subtypes of the overridden one. Cannot specify an exception class a class which isn't a subtype the overridden method specified exception.
 * In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods. Field hiding occurs even if the fields in the subclass and superclass have different types.
-* 
+* Static fields can be accessed via both class references and instance references. A class which is a subtype of the class containing a static field, inherits that field.
 
 ### 10. Programming Abstractly Through Interfaces
 
@@ -161,10 +168,13 @@ public class Test {
 * A method in an interface is abstract by default, hence we don't need to add the _abstract_ keyword. However, it's still valid if we do.
 * A field defined within a subtype can hide fields of the same name in supertypes, but a field defined in a supertype cannot hide other fields in other supertypes.
 * The _List_ _remove_ method removes the **first occurrence** of the specified element.
+* The _List add_ method with two parameters inserts the specified element, denoted by the second parameter, at the specified location, denoted by the first parameter.
 * The _List_ _addAll_ method appends all of the elements in the specified colllection to the end of the list, in the order they are returned by the specified collection's iterator. If the method takes a first argument integer, all elements are inserted into the list at the specified position.
 * The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
 * The _List_ _copyOf_ method returns an modifiable list containing elements of the original one. Calling any mutator method on the _List_ will **always** cause **_UnsupportedOperationException_** to be thrown.
 * A static method with a body belongs to the interface its declared in, and subtypes of this interface don't even inherit that static method. Meaning they can define a method with the  exact same signature.
+* When a class declares an extended class and implemented interfaces, the class name must go first, then interface names which are separated by commas. I.e. an extended class must first EXTEND one and only one class, then IMPLEMENT one or multiple interfaces, separated by commas, not the otherway around.
+* 
 
 ### 11. Handling Exceptions
 
@@ -179,6 +189,7 @@ public class Test {
 * A _finally_ block can also throw exceptions.
 * There cannot be more than one finally block in an exception handler.
 * No code can be inserted between to adjacent blocks in an exception handler.
+* 
 
 ### 12. Understanding Modules
 
@@ -187,6 +198,7 @@ public class Test {
 * A module must explicitly require a depending module. Exporting a package in one module to another specific module does not exempt the target module from explicitly requiring the dependency module.
 * You use the ```jdeps``` command to launch the Java class dependency analyzer.
 * You can produce a dependency summary by using the _jdeps_ command with the _-s_ or _-summary_ option. E.g. ```jdeps --module-path . -s foo```.
+* The _jdeps_ command shows the package-level or class-level dependencies of Java class files. The input class can be a path to a _.class_ file, a directory, a JAR file, or it can be a fully qualified class name (FQCN) to analyze all class files. The options determine the output. By default, the _jdeps_ command writes the dependencies to the system output. The command can generate the dependencies in DOT language (stored in _.dot_ files).
 * With the modular JDK, we can create custom runtimes consisting of only modules needed for our apps or the devices we're targeting. This means the runtime's size can be much smaller than it was.
 * With the modular JDK, internal APIs used by the platform itself are encapsulated and hidden from applications.
 * When an application fires up, the JVM walks through the module graph. If any module is missing, the JVM produces an error and shuts down. This helps avoid catastrophic consequences if sucj an issue were only found at runtime.
