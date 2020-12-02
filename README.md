@@ -103,7 +103,7 @@ The method returns ```-1``` because while the first element of the two is equal,
 If all elements in a shorter array are equal to the other array, but the other array is longer with more elements, the result is the **difference in length** (positive or negative, depending on which array passed as first argument).
 * The _Arrays_ _fill_ method assigns the specified Object reference to each element of the specified array of Objects.
 * The _Arrays mismatch_ method finds and returns the index of the first mismatch between the two array arguments, otherwise return ```-1``` if no mistmatch is found.
-* 
+* The _Arrays asList_ method returns a fixed-size list backed by the specified array. **Changes to the returned list "write through" to the array.** This method acts as a bridge between array-based and collection-based APIs. Changes made to the specified array affects the returned list, and changes made to the returned list affects the specified list.
 
 ### 6. Describing and Using Objects and Classes
 * The compiler only adds the default constructor if a class isn't defined with an explicit one.
@@ -157,6 +157,7 @@ public class Test {
 * When method overriding occurs, the overriding method cannot specify a checked exception that isn't specified by the overridden one. Specifying unchecked exceptions are valid, and so are subtypes of the overridden one. Cannot specify an exception class a class which isn't a subtype the overridden method specified exception.
 * In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods. Field hiding occurs even if the fields in the subclass and superclass have different types.
 * Static fields can be accessed via both class references and instance references. A class which is a subtype of the class containing a static field, inherits that field.
+* To be able to override a method in a subclass, the method must have a return type that is a subtype of the method it overrides.
 
 ### 10. Programming Abstractly Through Interfaces
 
