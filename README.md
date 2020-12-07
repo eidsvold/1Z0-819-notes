@@ -20,7 +20,7 @@
 11. [Handling Exceptions](#11-Handling-Exceptions)
 12. [Understanding Modules](#12-Understanding-Modules)
 
-### 1. Creating a Simple Java Program [Back to top](#Java-SE-11-Programmer-I-1Z0-815)
+### 1. Creating a Simple Java Program
 
 * If existent, the _package_ import MUST be the **first** statement in a source file, before any other statement.
 * The _-d_ option of the _javac_ command sets the destination directory for class files. If a class is part of a package, then _javac_ puts the class file in a subdirectory that reflects the package name and creates directories as needed.
@@ -31,11 +31,15 @@
 * To use a static member of a type directly in another type, we must use a **static import statement**. We can either import that particular static member: ```import static foo.MyFoo.myField``` or import all static members of the enclosing type: ```import static foo.MyFoo.*```.
 * The entry method of a program **must be** a _public static_ method. Its name **must be** _main_, the parameter type **must be** _String[]_ or _String..._, and the return type **must be** _void_. **!!**: The parameter name as well as the order of the modifiers **are not** important.
 
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
+
 ### 2. Understanding Java Technology and Environment
 * The Java Development Kit (JDK) is the only software required to set up a development environment.
 * The Java Runtime Environment (JRE) is used to run a compiled program instead of working with source files.
 * Integrated Development Environment (IDE) and Version Control System (VCS) are very important to developing applications, but they **are not** included in the JDK.
 * A **type** defined with no package declaration is part of an unnamed package. Such a type can be referenced from other types in the unnamed package, but is invisible to types in named packages.
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ### 3. Working With Primitive Data Types and String APIs
 
@@ -66,6 +70,8 @@
   * _var_ must go with a variable initializer
   * cannot be initialized to null
 * Object member access has the highest precedence in Java. This operation is performed before casting. _CharSequence_ does not have a method called _toUpperCase_, meaning you cannot convert to uppercase as you are casting from _CharSequence_ to _String_ like this: ```String string = String) charSequence.toUpperCase();```.
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ### 4. Using Operators and Decision Constructs
 
@@ -101,6 +107,8 @@ The _continue_ statement is **not applicable** in a _switch construct_. In the g
   The contained statement is reachable if and only if the for statement is reachable and the condition expression is not a constant expression whose value is false.
 *
 
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
+
 ### 5. Working with Java Arrays
 
 * The _Arrays.compare_ method returns the value ```0``` if the first and second array are equal and contain the same elements in the same order; a value **less than** ```0``` if the first array is _lexicographically_ less than the second array; and a value **greater than** ```0``` if the first array is _lexicographically_ greater than the second array. The method compares two and two elements at an index within the respective arrays.
@@ -117,10 +125,14 @@ If all elements in a shorter array are equal to the other array, but the other a
 * The _Arrays mismatch_ method finds and returns the index of the first mismatch between the two array arguments, otherwise return ```-1``` if no mistmatch is found.
 * The _Arrays asList_ method returns a fixed-size list backed by the specified array. **Changes to the returned list "write through" to the array.** This method acts as a bridge between array-based and collection-based APIs. Changes made to the specified array affects the returned list, and changes made to the returned list affects the specified list.
 
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
+
 ### 6. Describing and Using Objects and Classes
 * The compiler only adds the default constructor if a class isn't defined with an explicit one.
 * Both _String_ and _StringBuilder_ classes implement the _CharSequence_ interface, thus we can pass objects of these classes to methods requiring a _CharSequence_ object.
 * Objects passed in as a method parameter is not eligble for garbage collection even after the method returns.
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ### 7. Creating and Using Methods
 
@@ -154,8 +166,12 @@ public class Test {
 * When classes are loaded, all static fields are initialized, and static methods/initialization blocks are executed.
 * A method that looks like a constructor, but has a return type, is in fact not a constructor, just a regular method. Nothing wrong with that.
 
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
+
 ### 8. Applying Encapsulation
 * Classes declared with no access modifier are package-private, meaning they are invisible outside of the containing package, and so are its members as well.
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ### 9. Reusing Implementations Through Inheritance
 
@@ -171,6 +187,8 @@ public class Test {
 * In Java, **fields** and **static methods** are **NOT** polymorphic, meaning they can be hidden, and not overridden. Therefor, override rules does not apply to fields and static methods. Field hiding occurs even if the fields in the subclass and superclass have different types.
 * Static fields can be accessed via both class references and instance references. A class which is a subtype of the class containing a static field, inherits that field.
 * To be able to override a method in a subclass, the method must have a return type that is a subtype of the method it overrides.
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ### 10. Programming Abstractly Through Interfaces
 
@@ -193,6 +211,8 @@ public class Test {
 * The _List of_ method provides an unmodifiable list. Calling any mutator method on the _List_ will **ALWAYS** cause _UnsupportedOperationException_ to be thrown.
 * A lambda expression can onlu be used in places where a functional interface is expected. Such an interface has only a single abstract method. If an interface has more than one abstract method, it cannot be represented by a lambda expression. This incorrect use of lambda expressions lead to a compile-time error.
 
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
+
 ### 11. Handling Exceptions
 
 * When a method throws a **checked** exception, it must be either caught or specified in method delcaration.
@@ -208,6 +228,8 @@ public class Test {
 * There cannot be more than one finally block in an exception handler.
 * No code can be inserted between to adjacent blocks in an exception handler.
 * 
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ### 12. Understanding Modules
 
@@ -230,5 +252,8 @@ public class Test {
   * The main class to be run must be specified under the containing module with the _-m_ or _--module_ option.
 * Circular dependency is forbidden in Java, leading to a compile-time error. E.g. if module _bar_ requires module _foo_, and module _foo_ requires module _bar_, the dependency is circular.
 * Multiple directories can be used to indicate the module path - these directories must be separated by semicolons (;).
+* When starting a program with the _java_ command, the module path, module name and the main class must be specified, i.e. ```java -p . -m my.foo/foo.Test```
+
+[Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
 ## Java SE 11 Programmer II 1Z0-816
