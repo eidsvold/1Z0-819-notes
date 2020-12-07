@@ -94,6 +94,11 @@ The _continue_ statement is **not applicable** in a _switch construct_. In the g
 * Any code after a return statement in the same scope is unreachable and will lead to a compile-time error.
 * Unlike all other operators in Java, assignment operators are evaluated **from right to left**.
 * A _for_ loop with all expressions empty (initialization; termination; increment) ```for( ; ; )``` may look weird, but is entirely valid. Instead of relying on such expressions, we must control the _for_ loop using statements in its body.
+* A basic _for_ loop can complete normally if and **only** if at least one of the following is true:
+  * The _for_ statement is reachable, there is a condition expression, and the condition expression is not a constant expression with value true.
+  * There is a reachable break statement that exits the for statement
+  The contained statement is reachable if and only if the for statement is reachable and the condition expression is not a constant expression whose value is false.
+*
 
 ### 5. Working with Java Arrays
 
