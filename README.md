@@ -61,6 +61,11 @@
   * **trim**: all characters whose codepoint is less than or equal to 'U+0020'
   * **strip**: all characters whose codepoint returns true when passed to the _Character isWhitespace_ method. We can say _strip_ is "Unicode-aware" evolution of _trim_. The **strip** method was recently added to the API, starting with Java 11.
 * Classes ub the _java.time_ package, including _LocalTime_, are immutable. Any changes made to an instance will create a new object instead of modifying the existing one.
+* _**var**_ can only be used if the type of the declared varibale can be inferred from its initial value. _**var**_ cheat sheet:
+  * compound declaration is not allowed
+  * _var_ must go with a variable initializer
+  * cannot be initialized to null
+* 
 
 ### 4. Using Operators and Decision Constructs
 
@@ -141,6 +146,7 @@ public class Test {
   * The **second phase** performs overload resolution while allowing boxing and unboxing, but still precludes the use of variable arity method invocation. If no applicable method is found during the second phase, then processing continues to the thirs phase.
   * The **third phase** allows overloading to be combined with variable arity methods, boxing, and unboxing.
 * When classes are loaded, all static fields are initialized, and static methods/initialization blocks are executed.
+* A method that looks like a constructor, but has a return type, is in fact not a constructor, just a regular method. Nothing wrong with that.
 
 ### 8. Applying Encapsulation
 * Classes declared with no access modifier are package-private, meaning they are invisible outside of the containing package, and so are its members as well.
