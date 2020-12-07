@@ -60,7 +60,7 @@
 * The _trim_ and _strip_ methods in the _String_ class both remove leading and trailing spaces, but they use different definitions of white spaces;
   * **trim**: all characters whose codepoint is less than or equal to 'U+0020'
   * **strip**: all characters whose codepoint returns true when passed to the _Character isWhitespace_ method. We can say _strip_ is "Unicode-aware" evolution of _trim_. The **strip** method was recently added to the API, starting with Java 11.
-* 
+* Classes ub the _java.time_ package, including _LocalTime_, are immutable. Any changes made to an instance will create a new object instead of modifying the existing one.
 
 ### 4. Using Operators and Decision Constructs
 
