@@ -140,10 +140,10 @@ public class Test {
   * The **first phase** performs overload resolution without permitting boxing or unboxing conversion, or the use of variable arity method invocation. If no applicable method is found during first phase, then processing continues to the second phase.
   * The **second phase** performs overload resolution while allowing boxing and unboxing, but still precludes the use of variable arity method invocation. If no applicable method is found during the second phase, then processing continues to the thirs phase.
   * The **third phase** allows overloading to be combined with variable arity methods, boxing, and unboxing.
-* 
+* When classes are loaded, all static fields are initialized, and static methods/initialization blocks are executed.
 
 ### 8. Applying Encapsulation
-* 
+* Classes declared with no access modifier are package-private, meaning they are invisible outside of the containing package, and so are its members as well.
 
 ### 9. Reusing Implementations Through Inheritance
 
