@@ -191,6 +191,7 @@ public class Test {
 * A static method with a body belongs to the interface its declared in, and subtypes of this interface don't even inherit that static method. Meaning they can define a method with the  exact same signature.
 * When a class declares an extended class and implemented interfaces, the class name must go first, then interface names which are separated by commas. I.e. an extended class must first EXTEND one and only one class, then IMPLEMENT one or multiple interfaces, separated by commas, not the otherway around.
 * The _List of_ method provides an unmodifiable list. Calling any mutator method on the _List_ will **ALWAYS** cause _UnsupportedOperationException_ to be thrown.
+* A lambda expression can onlu be used in places where a functional interface is expected. Such an interface has only a single abstract method. If an interface has more than one abstract method, it cannot be represented by a lambda expression. This incorrect use of lambda expressions lead to a compile-time error.
 
 ### 11. Handling Exceptions
 
