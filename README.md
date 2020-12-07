@@ -182,7 +182,8 @@ public class Test {
 
 ### 11. Handling Exceptions
 
-* Including throws clause for unchecked exceptions on a method declaration is redundant, however it doesn't harm if we still indicate such an exception on the method's declaration.
+* When a method throws a **checked** exception, it must be either caught or specified in method delcaration.
+* Including throws clause for **unchecked** exceptions on a method declaration is redundant, however it doesn't harm if we still indicate such an exception on the method's declaration.
 * Unchecked exceptions do not need an exception handling mechanism for the code to compile.
 * When the exception type specified in the _catch_ block is a checked exception, it must match the type of exception objects that can be thrown in the _try_ block. If no such checked exception is thrown in the _try_ block, a compile-time error occurs where such an exception is caught.
 * A _finally_ block, if existent, **must** be the last block in an exception handling handler, or else it is a compile-time error.
