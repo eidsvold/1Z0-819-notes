@@ -70,6 +70,7 @@
 ### 4. Using Operators and Decision Constructs
 
 * A _**switch** statement_ can only work with the following primitive data types: _byte_, _short_, _char_, and _int_. It also works with _enumerated types_, the _String_ class, and a few special classes that wrap certain primitive types: _Character_, _Byte_, _Short_ and _Integer_.
+* A mismatch between switch expression and the label expressions makes the code unable to compile.
 * The _default_ label in a **switch** statement only matches an argument if all the other labels don't, **regardless of its position**. If a case block is returning a value, the switch statement exits when a case matches the argument.
 * The _break_ statement in a loop exits the construct right away, and the _continue_ statement skips to the next iteration of the construct.
 * A _do_ _statement_ can complete normally **if and only if at least one** of the following is true:
