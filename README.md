@@ -74,6 +74,7 @@
 * Object member access has the highest precedence in Java. This operation is performed before casting. _CharSequence_ does not have a method called _toUpperCase_, meaning you cannot convert to uppercase as you are casting from _CharSequence_ to _String_ like this: ```String string = String) charSequence.toUpperCase();```.
 * _**var**_ is not a keyword, instead, it's a local variable type inference, and we're free to use this word as an identifier.
 * The _String_ **compareTo** method returns the difference between the two characters at the first position where they are different. In case one string is a prefix of the other string, their difference in length is returned. The Unicode value of an uppercase letter is 32 less than that of its corresponding lowercase letter.
+* The _String_ **compareTo** method: %[argument_index$][flags][width]conversion https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax
 
 [Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
