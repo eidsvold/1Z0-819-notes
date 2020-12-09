@@ -30,6 +30,7 @@
 * Types are only loaded when they are **first referenced** in the code. This means an _import_ statement with the asterisk ```*``` character doesn't load all types in a package.
 * To use a static member of a type directly in another type, we must use a **static import statement**. We can either import that particular static member: ```import static foo.MyFoo.myField``` or import all static members of the enclosing type: ```import static foo.MyFoo.*```.
 * The entry method of a program **must be** a _public static_ method. Its name **must be** _main_, the parameter type **must be** _String[]_ or _String..._, and the return type **must be** _void_. **!!**: The parameter name as well as the order of the modifiers **are not** important.
+* NO need for an import statement for classes residing in the same package.
 
 [Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
