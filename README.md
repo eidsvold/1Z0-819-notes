@@ -71,6 +71,7 @@
   * cannot be initialized to null
 * Object member access has the highest precedence in Java. This operation is performed before casting. _CharSequence_ does not have a method called _toUpperCase_, meaning you cannot convert to uppercase as you are casting from _CharSequence_ to _String_ like this: ```String string = String) charSequence.toUpperCase();```.
 * _**var**_ is not a keyword, instead, it's a local variable type inference, and we're free to use this word as an identifier.
+* The _String_ **compareTo** method returns the difference between the two characters at the first position where they are different. In case one string is a prefix of the other string, their difference in length is returned. The Unicode value of an uppercase letter is 32 less than that of its corresponding lowercase letter.
 
 [Back to top](#Java-SE-11-Programmer-I-1Z0-815)
 
@@ -208,6 +209,7 @@ public class Test {
 * The _List_ _subList_ method returns a view of the portion of the original list, starting at the index specified by the first parameter (inclusive) and ending at the index specified by the second parameter (exclusive). The method does **not modify** the original list.
 * The _List_ _copyOf_ method returns an modifiable list containing elements of the original one. Calling any mutator method on the _List_ will **always** cause **_UnsupportedOperationException_** to be thrown.
 * A static method with a body belongs to the interface its declared in, and subtypes of this interface don't even inherit that static method. Meaning they can define a method with the  exact same signature.
+* A static method of an interface can only be called on the interface iself - it cannot be invoked on any object.
 * When a class declares an extended class and implemented interfaces, the class name must go first, then interface names which are separated by commas. I.e. an extended class must first EXTEND one and only one class, then IMPLEMENT one or multiple interfaces, separated by commas, not the otherway around.
 * The _List of_ method provides an unmodifiable list. Calling any mutator method on the _List_ will **ALWAYS** cause _UnsupportedOperationException_ to be thrown.
 * A lambda expression can onlu be used in places where a functional interface is expected. Such an interface has only a single abstract method. If an interface has more than one abstract method, it cannot be represented by a lambda expression. This incorrect use of lambda expressions lead to a compile-time error.
